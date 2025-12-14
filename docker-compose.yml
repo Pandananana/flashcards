@@ -3,19 +3,12 @@
 
 services:
   flashcards:
-    image: ghcr.io/YOUR_GITHUB_USERNAME/flashcards:latest
+    image: ghcr.io/pandananana/flashcards:latest
     container_name: flashcards
     restart: unless-stopped
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - ORIGIN=https://your-domain.com  # Set this to your actual domain
-    # If using Traefik, uncomment and configure:
-    # labels:
-    #   - "traefik.enable=true"
-    #   - "traefik.http.routers.flashcards.rule=Host(`flashcards.your-domain.com`)"
-    #   - "traefik.http.routers.flashcards.entrypoints=websecure"
-    #   - "traefik.http.routers.flashcards.tls.certresolver=letsencrypt"
-    #   - "traefik.http.services.flashcards.loadbalancer.server.port=3000"
+      - ORIGIN=https://flashcards.wend.dk  # Set this to your actual domain
 
